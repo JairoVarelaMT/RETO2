@@ -1,0 +1,11 @@
+$(document).ready(function(){
+    $("#client").hide();
+    $("#btnClient").click(function(){
+        $("#computers").hide();
+        $("#client").show();
+        $("#message").hide();
+    })
+    $("#btnGuardar").hide();
+    limpiarCampos();
+    listar();
+})

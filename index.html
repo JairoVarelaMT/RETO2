@@ -11,35 +11,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--JS-->
     <script src="./Computers.js"></script>
+    <script src="./limpiarCampos.js"></script>
     <title>Reto 2</title>
 </head>
 <body>
-    <h1>Sistema de Empleados</h1>
+    <h1>Reto 2</h1>
 
     
     
     <div class="container">
         <div class="row">
-            <div class="col-4"> <button type="button" class="btn btn-success" id="btnComputers">Compuerts</button></div>
-            <div class="col-4"> <button type="button" class="btn btn-success">Cliente</button></div>
-            <div class="col-4"> <button type="button" class="btn btn-success">Cliente</button></div>
+            <div class="col-4"> <button type="button" class="btn btn-outline-success" id="btnComputers">Compuerts</button></div>
+            <div class="col-4"> <button type="button" class="btn btn-warning" id="btnClient">Cliente</button></div>
+            <div class="col-4"> <button type="button" class="btn btn-success" id="btnMessage">Message</button></div>
         </div> 
         
     </div>
     
     <div class="container border border-primary text-cente mt-5" id="computers">
-        <h4 class="text-center">computer</h4>
-        <input type="number" id="id" class="form-control" placeholder="Id">
-        <input type="text" id="brand" class="form-control mt-2" placeholder="Brand">
-        <input type="number" id="model" class="form-control mt-2" placeholder="Model">
-        <input type="number" id="category_id" class="form-control mt-2" placeholder="Category id">
-        <input type="text" id="name" class="form-control" placeholder="Name">
-        <button onclick="listar()" id="btnListar">Listar</button>
-        <button onclick="agregar()" id="btnAgregar">Agregar</button>
-        <button onclick="actualizar()" id="btnGuardar">GuardarEdicion</button>
-        <div class="row"><!--tabla computers-->
-            <div id="listado"></div>
+        <div class="row">
+            <h4 class="text-center">computers</h4>
+            <div class="col-6">
+                <input type="number" id="id" class="form-control" placeholder="Id">
+                <input type="text" id="brand" class="form-control mt-2" placeholder="Brand">
+                <input type="number" id="model" class="form-control mt-2" placeholder="Model">
+                <input type="number" id="category_id" class="form-control mt-2" placeholder="Category id">
+                <input type="text" id="name" class="form-control mt-2 " placeholder="Name">            
+                <button onclick="agregarComputer()"id="btnAgregarComputer" class="btn btn-success mt-3 mb-3">Agregar</button>
+                <button onclick="actualizarComputer()" id="btnGuardarComputer" class="btn btn-dark mt-3 mb-3">GuardarEdicion</button>
+            </div>
+            <div class="col-6">
+                <div id="listadoComputer"></div>
+            </div>
         </div>
+        
     </div>
     <div class="container" id="client">
 

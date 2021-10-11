@@ -2,10 +2,14 @@ $(document).ready(function(){
     $("#computers").hide();
     $("#btnComputers").click(function(){
         $("#computers").show();
+        $("#client").hide();
+        $("#message").hide();
     })
     $("#btnGuardar").hide();
+    limpiarCampos();
+    listar();
 })
-function agregar(){
+function agregarComputer(){
     var data={
         id:$("#id").val(),
         name:$("#name").val(),
@@ -25,6 +29,7 @@ function agregar(){
         success:function(respuesta){
             console.log("Insertado");
             listar();
+            limpiarCamposComputer();
         },
 
         error:function(xhr,status){
@@ -33,7 +38,7 @@ function agregar(){
     });
 
 }
-function listar(){
+function listarComputer(){
     $.ajax({
         url:"https://g95d7ee77550996-computers.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/computer/computer",
         type:'GET',
@@ -41,7 +46,8 @@ function listar(){
 
         success:function(respuesta){
             console.log(respuesta);
-            listarRespuesta(respuesta.items);
+            limpiarCamposComputer();
+            listarRespuestaComputer(respuesta.items);
         },
 
         error:function(xhr,status){
@@ -49,7 +55,7 @@ function listar(){
         }
     });
 }
-function listarRespuesta(items){
+function listarRespuestaComputer(items){
     var tabla=`<table border="1" class="table table-dark table-hover">
               <tr>
                 <th>Id</th>
@@ -66,15 +72,15 @@ function listarRespuesta(items){
                     <td>${items[i].model}</td>
                     <td>${items[i].name}</td>
                     <td>${items[i].category_id}</td> 
-                    <td><button onclick="editarRegistro(${items[i].id})">Editar</td>
-                    <td><button onclick="borrar(${items[i].id})">Borrar</td>       
+                    <td><button onclick="editarRegistroComputer(${items[i].id})" class="btn btn-info btn-sm">Editar</td>
+                    <td><button onclick="borrarComputer(${items[i].id})"class="btn btn-danger btn-sm">Borrar</td>       
                 </tr>
         `;
     }
     tabla+=`</table>`;
-    $("#listado").html(tabla);
+    $("#listadoComputer").html(tabla);
 }
-function borrar(numId) {
+function borrarComputer(numId) {
     var data={
         id:numId
     }
@@ -89,7 +95,8 @@ function borrar(numId) {
 
         success:function(respuesta){
             console.log("Borrado");
-            listar();
+            limpiarCamposComputer();
+            listarComputer();
         },
 
         error:function(xhr,status){
@@ -98,10 +105,9 @@ function borrar(numId) {
     });
     
 }
-function editarRegistro(numId) {
-    $("#btnGuardar").show();
-    $("#btnAgregar").hide();
-    $("#btnListar").hide();
+function editarRegistroComputer(numId) {
+    $("#btnGuardarComputer").show();
+    $("#btnAgregarComputer").hide();
     $("#id").prop('disabled',true);
     $("#brand").focus();
     var datos={
@@ -127,7 +133,7 @@ function editarRegistro(numId) {
  
 }
 
-function actualizar(){
+function actualizarComputer(){
     var data={
         id:$("#id").val(),
         brand:$("#brand").val(),
@@ -146,10 +152,11 @@ function actualizar(){
 
         success:function(respuesta){
             console.log("Actualizado");
-            listar();
-            $("#btnGuardar").hide();
-            $("#btnAgregar").show();
-            $("#btnListar").show();
+            limpiarCamposComputer();
+            listarComputer();
+            $("#btnGuardarComputer").hide();
+            $("#btnAgregarComputer").show();        
+            $("#id").prop('disabled',false);
         },
 
         error:function(xhr,status){
