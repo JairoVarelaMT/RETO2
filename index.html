@@ -13,24 +13,21 @@
     <script src="./Computers.js"></script>
     <script src="./limpiarCampos.js"></script>
     <script src="./Client.js"></script>
-    <title>Reto 2</title>
+    <title>RETO #2</title>
 </head>
 <body>
-    <h1>Reto 2</h1>
-
-    
-    
+    <h1 style="background-color: rgb(90, 86, 86); color: rgb(255, 255, 255); padding: 10px" class="text-center mb-5">RETO #2</h1>
+   
     <div class="container">
         <div class="row">
             <div class="col-2"> <button type="button" class="btn btn-outline-success" id="btnComputers">Compuerts</button></div>
             <div class="col-2"> <button type="button" class="btn btn-outline-warning" id="btnClient">Cliente</button></div>
         </div> 
-        
     </div>
     
     <div class="container mt-5" id="computers">
         <div class="row">
-            <h4>Computers</h4>
+            <h4>Computadores</h4>
             <div class="col-6">
                 <input type="number" id="id" class="form-control" placeholder="Id">
                 <input type="text" id="brand" class="form-control mt-2" placeholder="Brand">
@@ -55,7 +52,7 @@
                 <input type="text" id="emailClient" class="form-control mt-1" placeholder="Email">     
                 <input type="number" id="ageClient" class="form-control mt-1" placeholder="Age">
                 <textarea class="form-control mt-1" placeholder="Mensaje: " id="messageClient"></textarea>     
-                <button onclick="agregarClient()"id="btnAgregaClient" class="btn btn-success mt-3 mb-3">Agregar cliente</button>
+                <button onclick="agregarClient()"id="btnAgregarClient" class="btn btn-success mt-3 mb-3">Agregar cliente</button>
                 <button onclick="actualizarClient()" id="btnGuardarClient" class="btn btn-dark mt-3 mb-3">Guardar Edicion</button>
             </div>
             <div class="col-6">
@@ -63,5 +60,6 @@
             </div>
         </div>
     </div>
+    <p style="position:absolute;">Creador: Jairo varela</p>
 </body>
 </html>

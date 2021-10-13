@@ -56,7 +56,7 @@ function listarComputer(){
     });
 }
 function listarRespuestaComputer(items){
-    var tabla=`<table border="1" class="table table-dark table-hover">
+    var tabla=`<table border="1" class="table table-light table-hover">
               <tr>
                 <th>Id</th>
                 <th>Name</th>
