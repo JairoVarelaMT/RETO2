@@ -3,11 +3,11 @@ $(document).ready(function(){
     $("#btnComputers").click(function(){
         $("#computers").show();
         $("#client").hide();
-        $("#message").hide();
+        
     })
-    $("#btnGuardar").hide();
-    limpiarCampos();
-    listar();
+    $("#btnGuardarComputer").hide();
+    limpiarCamposComputer();
+    listarComputer();
 })
 function agregarComputer(){
     var data={
@@ -28,7 +28,7 @@ function agregarComputer(){
 
         success:function(respuesta){
             console.log("Insertado");
-            listar();
+            listarComputer();
             limpiarCamposComputer();
         },
 

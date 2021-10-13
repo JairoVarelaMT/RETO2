@@ -5,3 +5,10 @@ function limpiarCamposComputer(){
     $("#category_id").val(""),
     $("#name").val("")
 }
+function limpiarCamposClient(){
+    $("#idClient").val(""),
+    $("#nameClient").val(""),
+    $("#emailClient").val(""),
+    $("#ageClient").val(""),
+    $("#messageClient").val("")
+}

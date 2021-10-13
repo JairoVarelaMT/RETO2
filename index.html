@@ -12,6 +12,7 @@
     <!--JS-->
     <script src="./Computers.js"></script>
     <script src="./limpiarCampos.js"></script>
+    <script src="./Client.js"></script>
     <title>Reto 2</title>
 </head>
 <body>
@@ -21,24 +22,23 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-4"> <button type="button" class="btn btn-outline-success" id="btnComputers">Compuerts</button></div>
-            <div class="col-4"> <button type="button" class="btn btn-warning" id="btnClient">Cliente</button></div>
-            <div class="col-4"> <button type="button" class="btn btn-success" id="btnMessage">Message</button></div>
+            <div class="col-2"> <button type="button" class="btn btn-outline-success" id="btnComputers">Compuerts</button></div>
+            <div class="col-2"> <button type="button" class="btn btn-outline-warning" id="btnClient">Cliente</button></div>
         </div> 
         
     </div>
     
-    <div class="container border border-primary text-cente mt-5" id="computers">
+    <div class="container mt-5" id="computers">
         <div class="row">
-            <h4 class="text-center">computers</h4>
+            <h4>Computers</h4>
             <div class="col-6">
                 <input type="number" id="id" class="form-control" placeholder="Id">
                 <input type="text" id="brand" class="form-control mt-2" placeholder="Brand">
                 <input type="number" id="model" class="form-control mt-2" placeholder="Model">
                 <input type="number" id="category_id" class="form-control mt-2" placeholder="Category id">
                 <input type="text" id="name" class="form-control mt-2 " placeholder="Name">            
-                <button onclick="agregarComputer()"id="btnAgregarComputer" class="btn btn-success mt-3 mb-3">Agregar</button>
-                <button onclick="actualizarComputer()" id="btnGuardarComputer" class="btn btn-dark mt-3 mb-3">GuardarEdicion</button>
+                <button onclick="agregarComputer()"id="btnAgregarComputer" class="btn btn-success mt-3 mb-3">Agregar computador</button>
+                <button onclick="actualizarComputer()" id="btnGuardarComputer" class="btn btn-dark mt-3 mb-3">Guardar Edicion</button>
             </div>
             <div class="col-6">
                 <div id="listadoComputer"></div>
@@ -47,11 +47,21 @@
         
     </div>
     <div class="container" id="client">
-
+        <div class="row text-cente mt-5">
+            <h4>Clientes</h4>
+            <div class="col-6">
+                <input type="number" id="idClient" class="form-control mt-1" placeholder="Id">
+                <input type="text" id="nameClient" class="form-control mt-1" placeholder="Name">     
+                <input type="text" id="emailClient" class="form-control mt-1" placeholder="Email">     
+                <input type="number" id="ageClient" class="form-control mt-1" placeholder="Age">
+                <textarea class="form-control mt-1" placeholder="Mensaje: " id="messageClient"></textarea>     
+                <button onclick="agregarClient()"id="btnAgregaClient" class="btn btn-success mt-3 mb-3">Agregar cliente</button>
+                <button onclick="actualizarClient()" id="btnGuardarClient" class="btn btn-dark mt-3 mb-3">Guardar Edicion</button>
+            </div>
+            <div class="col-6">
+                <div id="listadoClient"></div>
+            </div>
+        </div>
     </div>
-    <div class="container" id="message">
-
-    </div>
-    
 </body>
 </html>
